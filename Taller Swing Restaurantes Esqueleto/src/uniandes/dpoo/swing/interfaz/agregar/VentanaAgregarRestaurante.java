@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JOptionPane;
 
 import uniandes.dpoo.swing.interfaz.principal.VentanaPrincipal;
 
@@ -36,11 +37,17 @@ public class VentanaAgregarRestaurante extends JFrame
         setLayout( new BorderLayout( ) );
 
         // Agrega el panel donde va a estar el mapa
-        // TODO completar
+        panelMapa = new PanelMapaAgregar( );
+        add( panelMapa, BorderLayout.CENTER );
 
         // Agrega en el sur un panel para los detalles del restaurante y para los botones
-        // TODO completar
-
+        JPanel panelSur = new JPanel( new BorderLayout( ) );
+        panelDetalles = new PanelEditarRestaurante( );
+        panelBotones = new PanelBotonesAgregar( this );
+        panelSur.add( panelDetalles, BorderLayout.CENTER );
+        panelSur.add( panelBotones, BorderLayout.SOUTH );
+        add( panelSur, BorderLayout.SOUTH );
+        
         // Termina de configurar la ventana
         pack( );
         setLocationRelativeTo( null );
@@ -53,7 +60,18 @@ public class VentanaAgregarRestaurante extends JFrame
      */
     public void agregarRestaurante( )
     {
-        // TODO completar
+    	String nombre = panelDetalles.getNombre( );
+        if( nombre.isEmpty( ) )
+        {
+            JOptionPane.showMessageDialog( this, "Debe digitar el nombre del restaurante.", "Dato faltante", JOptionPane.WARNING_MESSAGE );
+            return;
+        }
+        int calificacion = panelDetalles.getCalificacion( );
+        boolean visitado = panelDetalles.getVisitado( );
+        int[] coordenadas = panelMapa.getCoordenadas( );
+
+        ventanaPrincipal.agregarRestaurante( nombre, calificacion, coordenadas[0], coordenadas[1], visitado );
+        dispose( );
     }
 
     /**

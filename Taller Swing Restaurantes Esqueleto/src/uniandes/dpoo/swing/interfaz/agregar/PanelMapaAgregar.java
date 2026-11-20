@@ -1,6 +1,7 @@
 package uniandes.dpoo.swing.interfaz.agregar;
 
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.MouseEvent;
@@ -31,7 +32,8 @@ public class PanelMapaAgregar extends JPanel implements MouseListener
 
     public PanelMapaAgregar( )
     {
-        this.labMapa = new JLabel( new ImageIcon( "./imagenes/mapa.png" ) );
+        setLayout( new FlowLayout(FlowLayout.CENTER, 0,0 ));
+    	this.labMapa = new JLabel( new ImageIcon( "./imagenes/mapa.png" ) );
         labMapa.setBorder( new LineBorder( Color.DARK_GRAY ) );
         labMapa.addMouseListener( this );
         add( labMapa );
