@@ -49,7 +49,7 @@ public class PanelBotones extends JPanel implements ActionListener
         String comando = e.getActionCommand( );
         if( comando.equals( NUEVO ) )
         {
-            ventanaPrincipal.mostrarVetanaNuevoRestaurante( );
+            ventanaPrincipal.mostrarVentanaNuevoRestaurante( );
         }
         else if( comando.equals( VER ) )
         {

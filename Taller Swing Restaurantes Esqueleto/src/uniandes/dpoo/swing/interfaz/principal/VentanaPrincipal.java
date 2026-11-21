@@ -72,7 +72,7 @@ public class VentanaPrincipal extends JFrame
     /**
      * Abre la ventana para agregar un nuevo restaurante, si no está abierta ya
      */
-    public void mostrarVetanaNuevoRestaurante( )
+    public void mostrarVentanaNuevoRestaurante( )
     {
         if( ventanaAgregar == null || !ventanaAgregar.isVisible( ) )
         {
