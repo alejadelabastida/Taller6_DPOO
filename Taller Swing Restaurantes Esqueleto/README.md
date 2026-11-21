@@ -12,6 +12,7 @@
 3. **Ver todos:** abre el mapa, donde se dibujan con Java2D el punto y el nombre de cada restaurante. Los radio buttons permiten ver **Todos** o solo los **Visitados**
 
 ## Diseño (diagrama de clases)
+Diagrama: carpeta diagrama de clases/diagrama de clases Restaurante.png
 - **Superclases:** las ventanas extienden `JFrame` y los paneles extienden `JPanel`.
 - **Interfaces:** `ActionListener` (`PanelBotones`, `PanelBotonesAgregar`, `VentanaMapa`), `MouseListener` (`PanelMapaAgregar`), `ListSelectionListener` (`PanelLista`).
 - **Widgets:** cada panel/ventana se asocia por composición con los widgets Swing que contiene (`JButton`, `JList`, `JLabel`, `JCheckBox`, `JTextField`, `JComboBox`, `JRadioButton`).
